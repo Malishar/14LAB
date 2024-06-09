@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>_14LAB</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ClassLibraryBankCards">
+      <HintPath>..\..\ClassLibraryBankCards\ClassLibraryBankCards\bin\Release\net7.0\ClassLibraryBankCards.dll</HintPath>
+    </Reference>
+    <Reference Include="LibraryClass">
+      <HintPath>..\..\LibraryClass\LibraryClass\bin\Debug\net7.0\LibraryClass.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
