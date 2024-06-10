@@ -277,9 +277,9 @@ namespace _14LAB
         // Метод для соединения (Join)
         public static IEnumerable<object> JoinDataUsingLINQ(List<SortedDictionary<int, BankCard>> bank)
         {
-            DebitCard dc1 = new DebitCard { Number = "2000 0000 4000 3000", Owner = "Иван Петров", Date = 2024, id = new IdNumber { Number = 1 }, Balance = 10000, };
-            DebitCard dc2 = new DebitCard { Number = "2000 7000 4000 3000", Owner = "Пётр Сидоров", Date = 2025, id = new IdNumber { Number = 2 }, Balance = 20000, };
-            DebitCard dc3 = new DebitCard { Number = "2000 0000 4000 6000", Owner = "Владимир Смирнов", Date = 2026, id = new IdNumber { Number = 3 }, Balance = 15000, };
+            DebitCard dc1 = new DebitCard { Number = "2000 0000 4000 3000", Owner = "Иван Петров", Date = 2024, id = new IdNumber { Number = 5 }, Balance = 10000, };
+            DebitCard dc2 = new DebitCard { Number = "2000 7000 4000 3000", Owner = "Пётр Сидоров", Date = 2025, id = new IdNumber { Number = 6 }, Balance = 20000, };
+            DebitCard dc3 = new DebitCard { Number = "2000 0000 4000 6000", Owner = "Владимир Смирнов", Date = 2026, id = new IdNumber { Number = 7 }, Balance = 15000, };
             bank[0].Add(dc1.id.Number, dc1);
             bank[1].Add(dc1.id.Number, dc2);
             bank[2].Add(dc1.id.Number, dc3);
