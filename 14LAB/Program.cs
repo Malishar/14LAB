@@ -46,21 +46,20 @@ namespace _14LAB
 
             //Меню
             int answer = 1;
-            while (answer != 10)
+            while (answer != 9)
             {
                 try
                 {
                     Console.WriteLine("\nМеню:");
                     Console.WriteLine("1. Распечатать данные коллекции:");
                     Console.WriteLine("2. Карты, со сроком действия больше 2025 (выборка данных Where)");
-                    Console.WriteLine("3. Операции над множествами (Union, Except, Intersect)");
-                    Console.WriteLine("4. Сумма баланса по дебетовым картам (Sum)");
-                    Console.WriteLine("5. Максимальный лимит и минимальный срок погашения по кредитным картам (Max, Min)");
-                    Console.WriteLine("6. Средний кэшбек по молодёжным картам (Average)");
-                    Console.WriteLine("7. Группировка карт по году действия (группировка данных Group by)");
-                    Console.WriteLine("8. Вычисление количества лет до истечения действия карты (новый тип Let)");
-                    Console.WriteLine("9. Соединение класса DebitCard с классом Account (Join)");
-                    Console.WriteLine("10. Выход");
+                    Console.WriteLine("3. Сумма баланса по дебетовым картам (Sum)");
+                    Console.WriteLine("4. Максимальный лимит и минимальный срок погашения по кредитным картам (Max, Min)");
+                    Console.WriteLine("5. Средний кэшбек по молодёжным картам (Average)");
+                    Console.WriteLine("6. Группировка карт по году действия (группировка данных Group by)");
+                    Console.WriteLine("7. Вычисление количества лет до истечения действия карты (новый тип Let)");
+                    Console.WriteLine("8. Соединение класса DebitCard с классом Account (Join)");
+                    Console.WriteLine("9. Выход");
                     Console.Write("Выберите вариант: \n");
 
                     answer = int.Parse(Console.ReadLine());
@@ -74,33 +73,30 @@ namespace _14LAB
                             BankOperations.SelectDataUsingExtensionMethods(bank);
                             break;
                         case 3:
-                            BankOperations.SetOperations(bank);
-                            break;
-                        case 4:
                             BankOperations.SumBalanceUsingLINQ(bank);
                             BankOperations.SumBalanceUsingExtensionMethods(bank);
                             break;
-                        case 5:
+                        case 4:
                             BankOperations.MinMaxCreditCardUsingLINQ(bank);
                             BankOperations.MinMaxCreditCardUsingExtensionMethods(bank);
                             break;
-                        case 6:
+                        case 5:
                             BankOperations.AverageCashbackUsingLINQ(bank);
                             BankOperations.AverageCashbackUsingExtensionMethods(bank);
                             break;
-                        case 7:
+                        case 6:
                             BankOperations.GroupDataUsingLINQ(bank);
                             BankOperations.GroupDataUsingExtensionMethods(bank);
                             break;
-                        case 8:
+                        case 7:
                             BankOperations.CreateNewTypeUsingLINQ(bank);
                             BankOperations.CreateNewTypeUsingExtensionMethods(bank);
                             break;
-                        case 9:
+                        case 8:
                             BankOperations.JoinDataUsingLINQ(bank);
                             BankOperations.JoinDataUsingExtensionMethods(bank);
                             break;
-                        case 10:
+                        case 9:
                             Console.WriteLine("Программа завершена");
                             break;
                         default:

@@ -48,73 +48,7 @@ namespace _14LAB
             }
             return methodQuery.ToList();
         }
-
-
-        // Метод для операций над множествами (Union, Except, Intersect)
-        public static string SetOperations(List<SortedDictionary<int, BankCard>> bank)
-        {
-            StringBuilder resultBuilder = new StringBuilder();
-
-            BankCard dc1 = new BankCard { Number = "2000 0000 4000 3000", Owner = "Иван Петров", Date = 2024, id = new IdNumber { Number = 1 } };
-            BankCard dc2 = new BankCard { Number = "2000 7000 4000 3000", Owner = "Пётр Сидоров", Date = 2025, id = new IdNumber { Number = 2 } };
-
-            bank[0].Add(dc1.id.Number, dc1);
-            bank[1].Add(dc2.id.Number, dc2);
-
-            // Union
-            var unionResult = bank[0].Values.Union(bank[1].Values).Union(bank[2].Values);
-            resultBuilder.AppendLine("\nРезультат объединения:");
-            foreach (var card in unionResult)
-            {
-                resultBuilder.AppendLine($"Number: {card.Number}, Owner: {card.Owner}, Date: {card.Date}");
-            }
-
-            // Except
-            var exceptResult1 = bank[0].Values.Except(bank[1].Values).Except(bank[2].Values);
-            var exceptResult2 = bank[1].Values.Except(bank[0].Values).Except(bank[2].Values);
-            var exceptResult3 = bank[2].Values.Except(bank[0].Values).Except(bank[1].Values);
-
-            resultBuilder.AppendLine("\nРезультат исключения:");
-            resultBuilder.AppendLine("Первое отделение, исключая второе и третье отделения:");
-            foreach (var card in exceptResult1)
-            {
-                resultBuilder.AppendLine($"Number: {card.Number}, Owner: {card.Owner}, Date: {card.Date}");
-            }
-            resultBuilder.AppendLine("Второе отделение, исключая первое и третье отделения:");
-            foreach (var card in exceptResult2)
-            {
-                resultBuilder.AppendLine($"Number: {card.Number}, Owner: {card.Owner}, Date: {card.Date}");
-            }
-            resultBuilder.AppendLine("Третье отделение, исключая первое и второе отделения:");
-            foreach (var card in exceptResult3)
-            {
-                resultBuilder.AppendLine($"Number: {card.Number}, Owner: {card.Owner}, Date: {card.Date}");
-            }
-
-            // Intersect
-            var intersectResult1 = bank[0].Values.Intersect(bank[1].Values);
-            var intersectResult2 = bank[0].Values.Intersect(bank[2].Values);
-            var intersectResult3 = bank[1].Values.Intersect(bank[2].Values);
-
-            resultBuilder.AppendLine("\nРезультаты пересечения:");
-            resultBuilder.AppendLine("Первое отделение и второе отделение пересекаются в:");
-            foreach (var card in intersectResult1)
-            {
-                resultBuilder.AppendLine($"Number: {card.Number}, Owner: {card.Owner}, Date: {card.Date}");
-            }
-            resultBuilder.AppendLine("Первое отделение и третье отделение пересекаются в:");
-            foreach (var card in intersectResult2)
-            {
-                resultBuilder.AppendLine($"Number: {card.Number}, Owner: {card.Owner}, Date: {card.Date}");
-            }
-            resultBuilder.AppendLine("Второе отделение и третье отделение пересекаются в:");
-            foreach (var card in intersectResult3)
-            {
-                resultBuilder.AppendLine($"Number: {card.Number}, Owner: {card.Owner}, Date: {card.Date}");
-            }
-
-            return resultBuilder.ToString();
-        }
+   
 
         public static double SumBalanceUsingLINQ(List<SortedDictionary<int, BankCard>> bank)
         {
@@ -313,9 +247,9 @@ namespace _14LAB
 
         public static IEnumerable<object> JoinDataUsingExtensionMethods(List<SortedDictionary<int, BankCard>> bank)
         {
-            DebitCard dc1 = new DebitCard { Number = "2000 0000 4000 3000", Owner = "Иван Петров", Date = 2024, id = new IdNumber { Number = 1 }, Balance = 10000, };
-            DebitCard dc2 = new DebitCard { Number = "2000 7000 4000 3000", Owner = "Пётр Сидоров", Date = 2025, id = new IdNumber { Number = 2 }, Balance = 20000, };
-            DebitCard dc3 = new DebitCard { Number = "2000 0000 4000 6000", Owner = "Владимир Смирнов", Date = 2026, id = new IdNumber { Number = 3 }, Balance = 15000, };
+            DebitCard dc1 = new DebitCard { Number = "2000 0000 4000 3000", Owner = "Иван Петров", Date = 2024, id = new IdNumber { Number = 5 }, Balance = 10000, };
+            DebitCard dc2 = new DebitCard { Number = "2000 7000 4000 3000", Owner = "Пётр Сидоров", Date = 2025, id = new IdNumber { Number = 6 }, Balance = 20000, };
+            DebitCard dc3 = new DebitCard { Number = "2000 0000 4000 6000", Owner = "Владимир Смирнов", Date = 2026, id = new IdNumber { Number = 7 }, Balance = 15000, };
             bank[0].Add(dc1.id.Number, dc1);
             bank[1].Add(dc1.id.Number, dc2);
             bank[2].Add(dc1.id.Number, dc3);
